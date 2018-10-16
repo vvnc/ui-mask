@@ -520,6 +520,7 @@ angular.module('ui.mask', [])
 
                             function keydownHandler(e) {
                                 /*jshint validthis: true */
+                                oldSelectionLength = getSelectionLength(this);
                                 var isKeyBackspace = e.which === 8,
                                 caretPos = getCaretPosition(this) - 1 || 0, //value in keydown is pre change so bump caret position back to simulate post change
                                 isCtrlZ = e.which === 90 && e.ctrlKey; //ctrl+z pressed
